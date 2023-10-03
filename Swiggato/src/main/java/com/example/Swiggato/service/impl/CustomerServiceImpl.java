@@ -6,10 +6,11 @@ import com.example.Swiggato.exception.CustomerNotFoundException;
 import com.example.Swiggato.model.Customer;
 import com.example.Swiggato.repository.CustomerRepository;
 import com.example.Swiggato.service.CustomerService;
+import org.springframework.stereotype.Service;
 
 import static com.example.Swiggato.transformer.CustomerTransformer.CustomerRequestToCustomer;
 import static com.example.Swiggato.transformer.CustomerTransformer.CustomerToCustomerResponse;
-
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     final CustomerRepository customerRepository; // defining of beam

@@ -46,6 +46,6 @@ public class Customer {
     @OneToOne(mappedBy = "customer" , cascade = CascadeType.ALL)
     Cart cart;
 
-    @OneToMany(mappedBy = "" , cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL)
     List<OrderEntity> orderEntityList = new ArrayList<>();
 }
