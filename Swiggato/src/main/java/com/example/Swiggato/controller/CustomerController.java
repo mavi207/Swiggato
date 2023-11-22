@@ -2,7 +2,7 @@ package com.example.Swiggato.controller;
 
 import com.example.Swiggato.dto.request.CustomerRequest;
 import com.example.Swiggato.dto.response.CustomerResponse;
-import com.example.Swiggato.service.impl.CustomerServiceImpl;
+import com.example.Swiggato.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,35 +11,30 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
-
+    // Field Injection:-- not prefered in coroporate
     @Autowired
-    CustomerServiceImpl customerService;  // field injection
+    CustomerService customerService;
 
-    /*
-    Constructor Injection ----> Always use in enterprise applications
-     */
-//    final CustomerServiceImpl customerService;
-//
+//    // constructor injection:-- always use this method in company
 //    @Autowired
-//    public CustomerController(CustomerServiceImpl customerService){
-//        this.customerService = customerService;
+//    public CustomerController(CustomerService customerService){
+//        this.customerService=customerService;
 //    }
 
     @PostMapping("/add")
     public ResponseEntity addCustomer(@RequestBody CustomerRequest customerRequest){
         CustomerResponse customerResponse = customerService.addCustomer(customerRequest);
-        return new ResponseEntity(customerResponse , HttpStatus.CREATED);
-    }
+        return new ResponseEntity(customerResponse, HttpStatus.CREATED);
 
-    @GetMapping("/find-by-mobile")
-    public ResponseEntity findCustomerByMobile(@RequestParam String phoneNumber){
-        try{
-            CustomerResponse customerResponse = customerService.findCustomerByMobile(phoneNumber);
-            return new ResponseEntity<>(customerResponse , HttpStatus.FOUND);
+    }
+    @GetMapping("/get/mobile/{mobile}")
+    public ResponseEntity getCustomerByMob(@PathVariable("mobile") String mobile){
+        try {
+            CustomerResponse customerResponse = customerService.getCustomerByMob(mobile);
+            return new ResponseEntity(customerResponse,HttpStatus.FOUND);
         }
-        catch(Exception e){
-            return new ResponseEntity<>(e.getMessage(),HttpStatus.FOUND);
+        catch (Exception e){
+            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }
-
 }

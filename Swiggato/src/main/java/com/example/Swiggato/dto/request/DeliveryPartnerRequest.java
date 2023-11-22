@@ -9,16 +9,10 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CustomerRequest {
-
+public class DeliveryPartnerRequest {
     String name;
-
-    String email;
-
-    String address;
 
     String mobileNo;
 
     Gender gender;
-
 }

@@ -1,8 +1,6 @@
 package com.example.Swiggato.dto.request;
 
 import com.example.Swiggato.Enum.RestaurantCategory;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -16,10 +14,8 @@ public class RestaurantRequest {
 
     String location;
 
-    String address;
-
     RestaurantCategory restaurantCategory;
 
-    String phoneNumber;
+    String contactNumber;
 
 }

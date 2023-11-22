@@ -1,21 +1,22 @@
 package com.example.Swiggato.dto.response;
 
+import com.example.Swiggato.Enum.Gender;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class CustomerResponse {
+@Builder
+public class DeliveryPartnerResponse {
+    int id;
 
     String name;
 
     String mobileNo;
 
-    String address;
+    Gender gender;
 
-    CartResponse cartResponse;
-
+    int TotalNoOfOrders;
 }

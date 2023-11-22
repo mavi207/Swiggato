@@ -1,6 +1,5 @@
 package com.example.Swiggato.dto.request;
 
-import com.example.Swiggato.Enum.Gender;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -9,16 +8,10 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CustomerRequest {
+public class FoodRequest {
+    int requiredQuantity;
 
-    String name;
+    String customerMobile;
 
-    String email;
-
-    String address;
-
-    String mobileNo;
-
-    Gender gender;
-
+    int menuItemId;  // user will give menuItem Id only , we will figure out from which restaurant he is ordering...
 }

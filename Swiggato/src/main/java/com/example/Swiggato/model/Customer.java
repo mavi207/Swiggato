@@ -19,33 +19,30 @@ import java.util.List;
 @Table(name = "customer")
 public class Customer {
 
-    @Id //this gives that this is a primary key of table
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     int id;
 
-    @Size(min = 4 , message = "{validation.name.size.too_short}")
-    @Size(max = 40 , message = "validation.name.size.too_long")
-    @Column(name = "name")
+    @Size(min = 2, message = "{validation.name.size.too_short}")
+    @Size(max = 40, message = "{validation.name.size.too_long}")
     String name;
 
     @Email
-    @Column(name = "email_id" , unique = true , nullable = false)
-    String emailId;
+    @Column(unique = true)
+    String email;
 
-    @Column(name = "address")
     String address;
 
-    @Column(name = "phone_number" , unique = true , nullable = false)
-    @Size(max = 10 , min = 10)
-    String phoneNumber;
+    @Column(unique = true,nullable = false)
+    @Size(min = 10, max = 10)
+    String mobileNo;
 
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     Gender gender;
 
-    @OneToOne(mappedBy = "customer" , cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
     Cart cart;
 
-    @OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL)
-    List<OrderEntity> orderEntityList = new ArrayList<>();
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    List<OrderEntity> orders = new ArrayList<>();
 }

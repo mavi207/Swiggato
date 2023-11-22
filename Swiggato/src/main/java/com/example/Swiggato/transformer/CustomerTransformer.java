@@ -1,28 +1,30 @@
 package com.example.Swiggato.transformer;
 
 import com.example.Swiggato.dto.request.CustomerRequest;
+import com.example.Swiggato.dto.response.CartResponse;
 import com.example.Swiggato.dto.response.CustomerResponse;
 import com.example.Swiggato.model.Customer;
 
 public class CustomerTransformer {
-    public static Customer CustomerRequestToCustomer (CustomerRequest customerRequest){
+    public static Customer CustomerRequestToCustomer(CustomerRequest customerRequest){
         return Customer.builder()
                 .name(customerRequest.getName())
-                .emailId(customerRequest.getEmailId())
+                .email(customerRequest.getEmail())
                 .address(customerRequest.getAddress())
-                .phoneNumber(customerRequest.getPhoneNumber())
+                .mobileNo(customerRequest.getMobileNo())
                 .gender(customerRequest.getGender())
                 .build();
     }
 
-    public static CustomerResponse CustomerToCustomerResponse (Customer customer){
+    public static CustomerResponse CustomerToCustomerResponse(Customer customer){
+        // we have to prepare cart response also becoz we need to save it in customer response
+        // call cart transformer
+        CartResponse cartResponse = CartTransformer.CartToCartResponse(customer.getCart());
         return CustomerResponse.builder()
                 .name(customer.getName())
-                .emailId(customer.getEmailId())
+                .mobileNo(customer.getMobileNo())
                 .address(customer.getAddress())
-                .phoneNumber(customer.getPhoneNumber())
-                .gender(customer.getGender())
+                .cartResponse(cartResponse)
                 .build();
     }
-
 }

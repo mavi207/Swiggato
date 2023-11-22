@@ -1,8 +1,5 @@
 package com.example.Swiggato.model;
 
-import com.example.Swiggato.Enum.FoodCategory;
-import com.example.Swiggato.Enum.IsAvailable;
-import com.example.Swiggato.Enum.IsVeg;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -20,16 +17,9 @@ public class FoodItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    String dishName;
+    int requiredQuantity;
 
-    double price;
-
-    @Enumerated(EnumType.STRING)
-    FoodCategory category;
-
-    IsVeg veg;
-
-    IsAvailable available;
+    double totalCost;
 
     @ManyToOne
     @JoinColumn
@@ -37,10 +27,10 @@ public class FoodItem {
 
     @ManyToOne
     @JoinColumn
-    OrderEntity order;
+    MenuItem menuItem; // reason behind the mapping with menuItem:- it will show all other info like name of dish, price, and all
 
     @ManyToOne
     @JoinColumn
-    Restaurant restaurant;
+    OrderEntity order;
 
 }

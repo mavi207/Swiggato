@@ -19,12 +19,12 @@ import java.util.List;
 public class OrderEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(name = "order_id")
-    String orderId;
+    String orderId;  // UUID
 
-    int totalOrder;
+    double orderTotal;
 
     @CreationTimestamp
     Date orderTime;
@@ -37,11 +37,10 @@ public class OrderEntity {
     @JoinColumn
     DeliveryPartner deliveryPartner;
 
-    @OneToMany(mappedBy = "" , cascade = CascadeType.ALL)
-    List<FoodItem> foodItemList = new ArrayList<>();
-
     @ManyToOne
+    @JoinColumn
     Restaurant restaurant;
 
-
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
+    List<FoodItem> foodItems = new ArrayList<>();
 }
