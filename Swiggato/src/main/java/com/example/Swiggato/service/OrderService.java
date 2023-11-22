@@ -85,23 +85,23 @@ public class OrderService {
 
         // now we are also sending real life mail to user's mail
 
-        String text = "Hi! " + customer.getName() + "\nYou have succefully placed your order !!!" +
-                "\n\nOrder Details :"+"\norder id : "+savedOrder.getOrderId()+
-                "\norder Total : "+savedOrder.getOrderTotal()+
-                "\norder Time : "+savedOrder.getOrderTime()+
-                "\nRestaurant : "+savedOrder.getRestaurant()+
-                "\n\nDelivery Partner :"+"\nName : "+partner.getName()+
-                "\nMob No : "+partner.getMobileNo()+
-                "\n\nYour Order is on the way !!!"+
-                "\n\nKeep Ordering !!! Enjoy your food !!!!";
-
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage(); // default object
-        simpleMailMessage.setFrom("arpitspringboot@gmail.com"); //  mail from which we want to send
-        simpleMailMessage.setTo(customer.getEmail()); // mail of user
-        simpleMailMessage.setSubject("Congrats!! You have succefully placed your order !!!"); // subject to the mail
-        simpleMailMessage.setText(text);
-
-        javaMailSender.send(simpleMailMessage);
+//        String text = "Hi! " + customer.getName() + "\nYou have succefully placed your order !!!" +
+//                "\n\nOrder Details :"+"\norder id : "+savedOrder.getOrderId()+
+//                "\norder Total : "+savedOrder.getOrderTotal()+
+//                "\norder Time : "+savedOrder.getOrderTime()+
+//                "\nRestaurant : "+savedOrder.getRestaurant().getName()+
+//                "\n\nDelivery Partner :"+"\nName : "+partner.getName()+
+//                "\nMob No : "+partner.getMobileNo()+
+//                "\n\nYour Order is on the way !!!"+
+//                "\n\nKeep Ordering !!! Enjoy your food !!!!";
+//
+//        SimpleMailMessage simpleMailMessage = new SimpleMailMessage(); // default object
+//        simpleMailMessage.setFrom(""); //  mail from which we want to send
+//        simpleMailMessage.setTo(customer.getEmail()); // mail of user
+//        simpleMailMessage.setSubject("Congrats!! You have succefully placed your order !!!"); // subject to the mail
+//        simpleMailMessage.setText(text);
+//
+//        javaMailSender.send(simpleMailMessage);
 
 
         // prepare orderresponse and return
