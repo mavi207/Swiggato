@@ -35,10 +35,11 @@ This application is still in progress and serves as an exploration into real-lif
 
 ER Diagram:-
 
-![image](https://github.com/mavi207/Swiggato/assets/136497987/7a2eea73-0f8f-409f-8c66-7d9b5c9f382e)
+![swiggato](https://github.com/mavi207/Swiggato/assets/136497987/ca7d5c69-ab71-44b0-ac23-29c56778d3b2)
 
 
-API'S In project from Swagger:-
+
+API'S in project from Swagger:-
 
 ![image](https://github.com/mavi207/Swiggato/assets/136497987/dc11b943-cf98-49cd-aad8-bb03d852667e)
 
