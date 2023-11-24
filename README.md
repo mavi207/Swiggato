@@ -33,3 +33,39 @@ This application is still in progress and serves as an exploration into real-lif
 
 
 
+ER Diagram:-
+
+![image](https://github.com/mavi207/Swiggato/assets/136497987/7a2eea73-0f8f-409f-8c66-7d9b5c9f382e)
+
+
+API'S In project from Swagger:-
+
+![image](https://github.com/mavi207/Swiggato/assets/136497987/dc11b943-cf98-49cd-aad8-bb03d852667e)
+
+![image](https://github.com/mavi207/Swiggato/assets/136497987/3ac78c55-4b38-4993-8727-1e2aed859b2b)
+
+
+Data Base
+
+Cart:-
+![image](https://github.com/mavi207/Swiggato/assets/136497987/92558f11-cc3f-4b70-8f89-2b66e866bf55)
+
+
+Customer:-
+![image](https://github.com/mavi207/Swiggato/assets/136497987/e40a3a25-be3a-487e-88f8-7b33628055a1)
+
+Delivery Partner:-
+![image](https://github.com/mavi207/Swiggato/assets/136497987/af52a821-e771-4435-adb7-2ccddf32e94b)
+
+Food Item:-
+![image](https://github.com/mavi207/Swiggato/assets/136497987/e93efc92-6741-455d-af8d-3b8dd631ef3c)
+
+Menu:-
+![image](https://github.com/mavi207/Swiggato/assets/136497987/de90d53d-e9da-4d6e-8353-1f93fe9dbe0e)
+
+Order Entity:-
+![image](https://github.com/mavi207/Swiggato/assets/136497987/23519648-2b50-4c7f-a00f-a7d8a42d50e5)
+
+Restaurant:-
+![image](https://github.com/mavi207/Swiggato/assets/136497987/702fadfa-9e47-43d8-beef-7bbd67ec76c4)
+
